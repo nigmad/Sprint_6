@@ -8,6 +8,7 @@ from locators.order_form_locators import OrderFormLocators
 
 class OrderPage(BasePage):
 
+
     @allure.step("Заполнить форму Для кого самокат")
     def fill_user_data_order_form(self, name, surname, address, phone):
         self.send_keys_to_input(OrderFormLocators.NAME, name)

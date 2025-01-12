@@ -41,3 +41,5 @@ def open_order_site_bottom_button(driver):
     base_page.wait_for_element(OrderFormLocators.NAME)
 
     return OrderPage(driver)
+
+

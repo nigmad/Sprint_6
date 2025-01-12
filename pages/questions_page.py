@@ -6,6 +6,7 @@ from locators.questions_page_locatos import QuestionsPageLocators
 class QuestionsPage(BasePage):
 
 
+
     @allure.step('Скролл до списка вопросов')
     def scroll_to_question_list(self):
         self.scroll_to_element(QuestionsPageLocators.QUESTIONS)

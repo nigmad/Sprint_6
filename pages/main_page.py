@@ -4,6 +4,8 @@ from pages.base_page import BasePage
 
 
 class MainPage(BasePage):
+
+
     @allure.step('Кликнуть на Яндекс Лого')
     def click_on_yandex_logo(self):
         self.click_on_element(MainPageLocators.YANDEX_LOGO)
