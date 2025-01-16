@@ -41,3 +41,11 @@ class BasePage:
     @allure.step('Ожидать появления указанного числа окон')
     def wait_for_number_of_windows(self, number, timeout=20):
         WebDriverWait(self.driver, timeout).until(EC.number_of_windows_to_be(number))
+
+    @allure.step('Найти элемент')
+    def find_element(self, *locator):
+        return self.driver.find_element(*locator)
+
+    @allure.step('Получить текущую ссылку')
+    def get_current_url(self):
+        return self.driver.current_url

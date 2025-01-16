@@ -23,3 +23,9 @@ class MainPage(BasePage):
     @allure.step('Кликнуть на кнопку Заказать вверху страницы')
     def click_on_top_order_button(self):
         self.click_on_element(MainPageLocators.TOP_ORDER_BUTTON)
+
+    @allure.step('Дождаться появления заголовка Самокат на главной странице')
+    def wait_for_samokat_header(self):
+        self.wait_for_element(MainPageLocators.SAMOKAT_HOME_HEADER)
+
+

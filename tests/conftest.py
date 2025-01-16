@@ -4,10 +4,9 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
 from project_url import *
-from locators.order_form_locators import OrderFormLocators
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
-from pages.base_page import BasePage
+
 
 
 @pytest.fixture(scope='function')
@@ -22,11 +21,10 @@ def driver():
 @pytest.fixture
 def open_order_site_top_button(driver):
     main_page = MainPage(driver)
-    base_page = BasePage(driver)
-
+    order_page = OrderPage(driver)
     main_page.click_on_top_order_button()
 
-    base_page.wait_for_element(OrderFormLocators.NAME)
+    order_page.wait_for_name_field()
 
     return OrderPage(driver)
 
@@ -34,11 +32,11 @@ def open_order_site_top_button(driver):
 @pytest.fixture
 def open_order_site_bottom_button(driver):
     main_page = MainPage(driver)
-    base_page = BasePage(driver)
+    order_page = OrderPage(driver)
 
     main_page.click_on_bottom_order_button()
 
-    base_page.wait_for_element(OrderFormLocators.NAME)
+    order_page.wait_for_name_field()
 
     return OrderPage(driver)
 

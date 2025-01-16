@@ -8,6 +8,11 @@ from locators.order_form_locators import OrderFormLocators
 
 class OrderPage(BasePage):
 
+    @allure.step('Подождать видимость поля для ввода имени')
+    def wait_for_name_field(self):
+        self.wait_for_element(OrderFormLocators.NAME)
+
+
 
     @allure.step("Заполнить форму Для кого самокат")
     def fill_user_data_order_form(self, name, surname, address, phone):
@@ -56,6 +61,10 @@ class OrderPage(BasePage):
     @allure.step("Нажать на кнопку Да")
     def click_on_yes_button(self):
         self.click_on_element(ConfirmationOrderWindowLocators.YES_BUTTON)
+        self.wait_for_element(SuccessfulOrderPageLocators.ORDER_NUMBER_TEXT)
+
+    @allure.step('Подождать видимость номера заказа')
+    def wait_for_order_number(self):
         self.wait_for_element(SuccessfulOrderPageLocators.ORDER_NUMBER_TEXT)
 
 
