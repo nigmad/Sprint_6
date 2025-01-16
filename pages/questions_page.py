@@ -2,7 +2,6 @@ import allure
 from pages.base_page import BasePage
 from locators.questions_page_locatos import QuestionsPageLocators
 
-
 class QuestionsPage(BasePage):
 
 

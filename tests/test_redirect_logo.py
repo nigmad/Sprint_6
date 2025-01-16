@@ -1,7 +1,5 @@
 import allure
 
-
-
 from project_url import Curl
 from locators.main_page_locators import MainPageLocators
 from pages.main_page import MainPage
@@ -17,7 +15,7 @@ class TestRedirectYandexLogo:
         main_page.wait_for_number_of_windows(2)
         main_page.switch_to_new_window()
         main_page.wait_for_url_contains(Curl.AUTH_YANDEX)
-        main_page.wait_for_url_contains(Curl.DZEN_SITE)  #
+        main_page.wait_for_url_contains(Curl.DZEN_SITE)
 
         assert Curl.DZEN_SITE in main_page.get_current_url()
 

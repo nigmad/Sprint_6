@@ -1,11 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class QuestionsPageLocators:
-
-
     QUESTIONS = (By.CLASS_NAME, 'accordion__heading')
-
-
 
     @staticmethod
     def question_number(question):
